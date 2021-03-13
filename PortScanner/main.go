@@ -12,6 +12,8 @@ const (
 	defaultConnectTime = 500
 )
 
+// go run main.go 192.168.150. 22     300
+//                IP seg       port   time
 func main() {
 	if len(os.Args) < 3 {
 		fmt.Println("args error!")
