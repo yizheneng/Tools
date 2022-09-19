@@ -11,7 +11,7 @@ for i in range(256):
         table.append(1)
 
 numberStr = "const uint8_t picture%dX%d[][%d] = {\r\n"%(imageSize[0], imageSize[1], imageSize[0]*imageSize[1]/8)
-for root, dirs, files in os.walk("C:/Users/bing/Desktop/wather_png1"):
+for root, dirs, files in os.walk("C:/Users/bing/Pictures/1"):
     for f in files:
         # print(os.path.join(root, f))
         img=Image.open(os.path.join(root, f))
@@ -19,7 +19,7 @@ for root, dirs, files in os.walk("C:/Users/bing/Desktop/wather_png1"):
         img.thumbnail(imageSize)
         img = img.convert('L')
         img = img.point(table, '1')
-        img.save(os.path.join("C:/Users/bing/Desktop/wather_bmp", f.lower().replace(".jpg", "") + ".bmp"), 'bmp')
+        img.save(os.path.join("C:/Users/bing/Pictures/2", f.lower().replace(".jpg", "") + ".bmp"), 'bmp')
         numberStr += "  {"
 
         w1, h1 = img.size
